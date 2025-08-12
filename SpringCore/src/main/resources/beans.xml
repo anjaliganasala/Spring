@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+   <bean id="st" class= "com.Student" autowire="constructor">
+        <constructor-arg index="0"  value="1"></constructor-arg>
+        <constructor-arg index="1"  value="anjali"></constructor-arg>
+   </bean>
+   
+    <bean class="com.Address" id="addr">
+     <constructor-arg name="addrId" value="101"></constructor-arg>
+     <constructor-arg name="street" value="chenni"></constructor-arg>
+    </bean>
+   
+   <bean id="emp" class="com.Employee">
+   <property name="empId" value="1"></property>
+   <property name="skills">
+        <list>
+           <value>JAVA</value>
+           <value>JDBC</value>
+           <value>Hibernate</value>
+        </list>
+   </property>
+   
+   <property name="hobbies">
+    
+     <map>    
+     <entry key ="1" value="music"></entry>
+     <entry key ="2" value="gardening"></entry>    
+     </map>
+   </property>
+   </bean>
+   
+</beans>
